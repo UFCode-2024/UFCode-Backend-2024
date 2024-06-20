@@ -1,0 +1,101 @@
+2021-10-21T14:57:04.493918+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-10-21T14:57:04.497179+00:00 app[web.1]: 
+2021-10-21T14:57:04.497317+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-10-21T14:57:04.497389+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-10-21T14_57_04_494Z-debug.log
+2021-10-21T14:57:04.663948+00:00 heroku[web.1]: Process exited with status 1
+2021-10-21T14:57:04.740947+00:00 heroku[web.1]: State changed from starting to crashed
+2021-10-21T14:57:05.689695+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=ufc-code.herokuapp.com request_id=38aafee7-6cd4-43d3-9b17-c47109a440c2 fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T14:57:06.343910+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=ufc-code.herokuapp.com request_id=63e946fa-b3b2-482f-9175-1e9a157c94b4 fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T14:57:09.220757+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/api-docs/" host=ufc-code.herokuapp.com request_id=89f43696-f773-4d23-98f2-05b5a026f8f6 fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T14:57:09.781889+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=ufc-code.herokuapp.com request_id=775efdfe-60df-4b99-b2f1-5444fbdec710 fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T15:00:10.000000+00:00 app[api]: Build started by user ufcode.paip@gmail.com
+2021-10-21T15:00:32.143130+00:00 app[api]: Deploy a0fa01a1 by user ufcode.paip@gmail.com
+2021-10-21T15:00:32.143130+00:00 app[api]: Release v15 created by user ufcode.paip@gmail.com
+2021-10-21T15:00:32.388524+00:00 heroku[web.1]: State changed from crashed to starting
+2021-10-21T15:00:34.000000+00:00 app[api]: Build succeeded
+2021-10-21T15:00:34.885440+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-10-21T15:00:35.832524+00:00 app[web.1]: 
+2021-10-21T15:00:35.832541+00:00 app[web.1]: > ufcode-backend@1.0.0 start /app
+2021-10-21T15:00:35.832541+00:00 app[web.1]: > node main.js
+2021-10-21T15:00:35.832541+00:00 app[web.1]: 
+2021-10-21T15:00:36.078025+00:00 app[web.1]: internal/modules/cjs/loader.js:329
+2021-10-21T15:00:36.078027+00:00 app[web.1]: throw err;
+2021-10-21T15:00:36.078027+00:00 app[web.1]: ^
+2021-10-21T15:00:36.078028+00:00 app[web.1]: 
+2021-10-21T15:00:36.078028+00:00 app[web.1]: Error: Cannot find module '/app/node_modules/mongoose/node_modules/mongodb/lib/index.js'. Please verify that the package.json has a valid "main" entry
+2021-10-21T15:00:36.078029+00:00 app[web.1]: at tryPackage (internal/modules/cjs/loader.js:321:19)
+2021-10-21T15:00:36.078031+00:00 app[web.1]: at Function.Module._findPath (internal/modules/cjs/loader.js:534:18)
+2021-10-21T15:00:36.078032+00:00 app[web.1]: at Function.Module._resolveFilename (internal/modules/cjs/loader.js:888:27)
+2021-10-21T15:00:36.078032+00:00 app[web.1]: at Function.Module._load (internal/modules/cjs/loader.js:746:27)
+2021-10-21T15:00:36.078032+00:00 app[web.1]: at Module.require (internal/modules/cjs/loader.js:974:19)
+2021-10-21T15:00:36.078033+00:00 app[web.1]: at require (internal/modules/cjs/helpers.js:93:18)
+2021-10-21T15:00:36.078051+00:00 app[web.1]: at Object.<anonymous> (/app/node_modules/mongoose/lib/drivers/node-mongodb-native/binary.js:8:16)
+2021-10-21T15:00:36.078051+00:00 app[web.1]: at Module._compile (internal/modules/cjs/loader.js:1085:14)
+2021-10-21T15:00:36.078052+00:00 app[web.1]: at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+2021-10-21T15:00:36.078052+00:00 app[web.1]: at Module.load (internal/modules/cjs/loader.js:950:32) {
+2021-10-21T15:00:36.078052+00:00 app[web.1]: code: 'MODULE_NOT_FOUND',
+2021-10-21T15:00:36.078052+00:00 app[web.1]: path: '/app/node_modules/mongoose/node_modules/mongodb/package.json',
+2021-10-21T15:00:36.078053+00:00 app[web.1]: requestPath: 'mongodb'
+2021-10-21T15:00:36.078053+00:00 app[web.1]: }
+2021-10-21T15:00:36.085909+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-10-21T15:00:36.086118+00:00 app[web.1]: npm ERR! errno 1
+2021-10-21T15:00:36.090000+00:00 app[web.1]: npm ERR! ufcode-backend@1.0.0 start: `node main.js`
+2021-10-21T15:00:36.090063+00:00 app[web.1]: npm ERR! Exit status 1
+2021-10-21T15:00:36.090136+00:00 app[web.1]: npm ERR!
+2021-10-21T15:00:36.090195+00:00 app[web.1]: npm ERR! Failed at the ufcode-backend@1.0.0 start script.
+2021-10-21T15:00:36.090248+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-10-21T15:00:36.092685+00:00 app[web.1]: 
+2021-10-21T15:00:36.092790+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-10-21T15:00:36.092839+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-10-21T15_00_36_090Z-debug.log
+2021-10-21T15:00:36.207221+00:00 heroku[web.1]: Process exited with status 1
+2021-10-21T15:00:36.540831+00:00 heroku[web.1]: State changed from starting to crashed
+2021-10-21T15:00:38.190039+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/api-docs/" host=ufc-code.herokuapp.com request_id=4bf0eb03-611d-4972-9f0d-ff6afc14c38e fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T15:00:38.884934+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=ufc-code.herokuapp.com request_id=185c7209-7c64-456d-a979-51363123217c fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T15:01:29.000000+00:00 app[api]: Build started by user ufcode.paip@gmail.com
+2021-10-21T15:01:30.391115+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/api-docs/" host=ufc-code.herokuapp.com request_id=d652e2f8-e14c-4005-86d0-fa72f737867f fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T15:01:30.941396+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=ufc-code.herokuapp.com request_id=5ea9300f-67e9-4f68-9c44-46a67b0dd11a fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T15:01:53.330655+00:00 app[api]: Deploy a0fa01a1 by user ufcode.paip@gmail.com
+2021-10-21T15:01:53.330655+00:00 app[api]: Release v16 created by user ufcode.paip@gmail.com
+2021-10-21T15:01:54.817104+00:00 heroku[web.1]: State changed from crashed to starting
+2021-10-21T15:01:55.000000+00:00 app[api]: Build succeeded
+2021-10-21T15:01:57.986017+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-10-21T15:01:59.692218+00:00 app[web.1]: 
+2021-10-21T15:01:59.692239+00:00 app[web.1]: > ufcode-backend@1.0.0 start /app
+2021-10-21T15:01:59.692239+00:00 app[web.1]: > node main.js
+2021-10-21T15:01:59.692239+00:00 app[web.1]: 
+2021-10-21T15:02:00.351037+00:00 app[web.1]: internal/modules/cjs/loader.js:329
+2021-10-21T15:02:00.351061+00:00 app[web.1]: throw err;
+2021-10-21T15:02:00.351062+00:00 app[web.1]: ^
+2021-10-21T15:02:00.351062+00:00 app[web.1]: 
+2021-10-21T15:02:00.351063+00:00 app[web.1]: Error: Cannot find module '/app/node_modules/mongoose/node_modules/mongodb/lib/index.js'. Please verify that the package.json has a valid "main" entry
+2021-10-21T15:02:00.351064+00:00 app[web.1]: at tryPackage (internal/modules/cjs/loader.js:321:19)
+2021-10-21T15:02:00.351064+00:00 app[web.1]: at Function.Module._findPath (internal/modules/cjs/loader.js:534:18)
+2021-10-21T15:02:00.351064+00:00 app[web.1]: at Function.Module._resolveFilename (internal/modules/cjs/loader.js:888:27)
+2021-10-21T15:02:00.351065+00:00 app[web.1]: at Function.Module._load (internal/modules/cjs/loader.js:746:27)
+2021-10-21T15:02:00.351065+00:00 app[web.1]: at Module.require (internal/modules/cjs/loader.js:974:19)
+2021-10-21T15:02:00.351066+00:00 app[web.1]: at require (internal/modules/cjs/helpers.js:93:18)
+2021-10-21T15:02:00.351066+00:00 app[web.1]: at Object.<anonymous> (/app/node_modules/mongoose/lib/drivers/node-mongodb-native/binary.js:8:16)
+2021-10-21T15:02:00.351066+00:00 app[web.1]: at Module._compile (internal/modules/cjs/loader.js:1085:14)
+2021-10-21T15:02:00.351067+00:00 app[web.1]: at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+2021-10-21T15:02:00.351067+00:00 app[web.1]: at Module.load (internal/modules/cjs/loader.js:950:32) {
+2021-10-21T15:02:00.351067+00:00 app[web.1]: code: 'MODULE_NOT_FOUND',
+2021-10-21T15:02:00.351068+00:00 app[web.1]: path: '/app/node_modules/mongoose/node_modules/mongodb/package.json',
+2021-10-21T15:02:00.351068+00:00 app[web.1]: requestPath: 'mongodb'
+2021-10-21T15:02:00.351068+00:00 app[web.1]: }
+2021-10-21T15:02:00.373139+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-10-21T15:02:00.373440+00:00 app[web.1]: npm ERR! errno 1
+2021-10-21T15:02:00.391037+00:00 app[web.1]: npm ERR! ufcode-backend@1.0.0 start: `node main.js`
+2021-10-21T15:02:00.391149+00:00 app[web.1]: npm ERR! Exit status 1
+2021-10-21T15:02:00.391491+00:00 app[web.1]: npm ERR!
+2021-10-21T15:02:00.391582+00:00 app[web.1]: npm ERR! Failed at the ufcode-backend@1.0.0 start script.
+2021-10-21T15:02:00.391666+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-10-21T15:02:00.414434+00:00 app[web.1]: 
+2021-10-21T15:02:00.417752+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-10-21T15:02:00.417820+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-10-21T15_02_00_394Z-debug.log
+2021-10-21T15:02:00.610085+00:00 heroku[web.1]: Process exited with status 1
+2021-10-21T15:02:00.936211+00:00 heroku[web.1]: State changed from starting to crashed
+2021-10-21T15:02:02.419789+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=ufc-code.herokuapp.com request_id=3e0410b0-6595-41df-b6a3-72497c216518 fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T15:02:03.159199+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=ufc-code.herokuapp.com request_id=3218922d-4cda-4e29-9e6b-0ae3b4115d09 fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T15:03:03.069550+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=ufc-code.herokuapp.com request_id=9a15bd24-4182-4730-ba60-1490504f8718 fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+2021-10-21T15:03:03.760810+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=ufc-code.herokuapp.com request_id=a39a20d9-f1a3-4305-a5cf-7d9f0db65ec6 fwd="177.37.135.92" dyno= connect= service= status=503 bytes= protocol=https
+Deseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? 

@@ -1,0 +1,1145 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "PAIP DOCS API",
+        "description": "ambiente de testes do backend",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/problem": {
+            "post": {
+                "summary": "Criar Problema",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Problem"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Problem"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "name": "nome do problema",
+                                        "description": "Descrever o problema",
+                                        "input": "entrada",
+                                        "expectedOutput": "saída esperada",
+                                        "id_house": "inserir o id",
+                                        "id_difficulty": "inserir o id",
+                                        "courses": [
+                                            "inserir os id dos cursos"
+                                        ],
+                                        "modules": [
+                                            "inserir os id dos modulos"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Problem"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todos os Problemas",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Problem"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Problem"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/problem/{id}": {
+            "get": {
+                "summary": "buscar problema por id",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Problem"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar problema",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Problem"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "deletar problema por id",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Problem"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar problema",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Problem"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Criar Problema",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Problem"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar problema",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Problem"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "name": "nome do problema",
+                                        "description": "Descrever o problema",
+                                        "input": "entrada",
+                                        "expectedOutput": "saída esperada",
+                                        "id_house": "inserir o id",
+                                        "id_difficulty": "inserir o id",
+                                        "courses": [
+                                            "inserir os id dos cursos"
+                                        ],
+                                        "modules": [
+                                            "inserir os id dos modulos"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Problem"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/course": {
+            "post": {
+                "summary": "Criar Curso",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Course"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Course"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "name": "teste"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Course"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todos os cursos",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Course"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Course"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/course/{id}": {
+            "put": {
+                "summary": "buscar curso por id",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Course"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar curso",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Course"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "name": "teste"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Course"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "get": {
+                "summary": "buscar curso por id",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Course"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar curso",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Course"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "deletar curso por id ",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Course"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para deletar curso",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Course"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/difficulty": {
+            "post": {
+                "summary": "Criar Dificuldade",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Difficulty"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Difficulty"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "name": "teste"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Difficulty"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todas as dificuldades",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Difficulty"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Difficulty"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/difficulty/{id}": {
+            "get": {
+                "summary": "buscar dificuldade por id",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Difficulty"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar dificuldade",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Difficulty"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "deletar dificuldade por id",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Difficulty"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar dificuldade",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Difficulty"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/house": {
+            "post": {
+                "summary": "Criar Casa",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "House"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/House"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "name": "teste",
+                                        "positionX": "80",
+                                        "positionY": "90",
+                                        "description": "tarara"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/House"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todas as casas",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "House"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Problem"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/house/{id}": {
+            "get": {
+                "summary": "buscar Casa por ID",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "House"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar casa",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/House"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "deletar casa por ID",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "House"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para deletar casa",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/House"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/language": {
+            "post": {
+                "summary": "Criar Linguagem",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Language"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Language"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "name": "teste"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/House"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todas as linguagens",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Language"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Language"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/language/{id}": {
+            "get": {
+                "summary": "Buscar linguagem por ID",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Language"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar linguagem",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Language"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "deletar linguagem",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Language"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para deletar linguagem",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Language"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/module": {
+            "post": {
+                "summary": "Criar Modulo",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Module"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Module"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "name": "teste"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Module"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todos os módulos",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Module"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Module"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/module/{id}": {
+            "get": {
+                "summary": "buscar modulo por ID",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Module"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar modulo",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Module"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "deletar Module por ID",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Module"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar modulo",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Module"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/submission": {
+            "post": {
+                "summary": "Criar Submissão de código",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Submission"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Submission"
+                            },
+                            "examples": {
+                                "problem": {
+                                    "value": {
+                                        "codeInput": "value = int(input())\nprint(30)",
+                                        "student_id": "123123",
+                                        "problem_id": "614a6d41ddedeb38d444fa95",
+                                        "language_id": "6111b959ea33a732debb95a2"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Submission"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "get": {
+                "summary": "Buscar todas as submissões",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Submission"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Problem"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        },
+        "/api/submission/{id}": {
+            "get": {
+                "summary": "buscar submissão por id",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Submission"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar submissão",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Submission"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Deletar submissão por ID",
+                "description": "Descrever abaixo as regras de cada campo",
+                "tags": [
+                    "Submission"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id para buscar submissão",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Submission"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "already exist"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Problem": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "input": {
+                        "type": "string"
+                    },
+                    "expectedOutput": {
+                        "type": "string"
+                    },
+                    "id_house": {
+                        "type": "string"
+                    },
+                    "id_difficulty": {
+                        "type": "string"
+                    },
+                    "courses": {
+                        "type": "array"
+                    },
+                    "modules": {
+                        "type": "array"
+                    }
+                }
+            },
+            "Course": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Difficulty": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "House": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "positionX": {
+                        "type": "number"
+                    },
+                    "positionY": {
+                        "type": "number"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Language": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Module": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Submission": {
+                "type": "object",
+                "properties": {
+                    "codeInput": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "string"
+                    },
+                    "error": {
+                        "type": "string"
+                    },
+                    "id_problem": {
+                        "type": "string"
+                    },
+                    "id_language": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
