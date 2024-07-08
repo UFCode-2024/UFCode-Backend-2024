@@ -27,7 +27,6 @@ module.exports.createSubmission = async (req, res) => {
 
     async function handleSubmissionSuccess(success) {
         // Verificação da resposta do desafio 
-        
         while(success.search('\r\n') > 0){
             success = success.replace('\r\n', '\n')
         }

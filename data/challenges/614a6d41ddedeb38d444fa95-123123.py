@@ -1,2 +1,2 @@
 value = int(input())
-print(20)
+print(30)

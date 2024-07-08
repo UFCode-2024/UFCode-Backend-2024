@@ -1,6 +1,6 @@
-const fs = require('fs').promises
-const config = require('../config')
-const BASE_DIR = config.challengesBaseDir
+import { promises as fs } from 'fs'
+import { challengesBaseDir } from '../config'
+const BASE_DIR = challengesBaseDir
 
 fs.mkdir(BASE_DIR, { recursive: true })
 
@@ -15,4 +15,4 @@ class ChallengesFileHandler {
     }
 }
 
-module.exports = new ChallengesFileHandler()
+export default new ChallengesFileHandler()
