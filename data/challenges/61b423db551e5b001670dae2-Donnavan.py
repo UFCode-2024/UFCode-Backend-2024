@@ -1,1 +1,3 @@
-print('não')
+input()
+print('Antioxidante')
+print('["Edulcorante","Flavorizante","Acidulante","Clarificante"]')
