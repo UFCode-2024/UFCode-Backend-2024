@@ -1,37 +1,48 @@
 const { spawn } = require('child_process');
-const fs = require('fs').promises
 
 async function invokeSubmission(filePath, inputString, err, success) {
     const python = spawn('python', [filePath]);
+    const inputBuffer = Buffer.from(inputString, 'utf-8');
 
-    const inputBuffer = Buffer.from(inputString, 'utf-8')
+    let stdout = "";
+    let stderr = "";
+    let responseSent = false; // Flag to check if response has been sent
 
     var uint8arrayToString = function(data){
         return String.fromCharCode.apply(null, data);
     };
-    
-    let stdout = ""
-    let stderr = ""
-    python.stdin.write(inputBuffer)
-    python.stdin.end()
+
+    python.stdin.write(inputBuffer);
+    python.stdin.end();
 
     python.stdout.on('data', (data) => {
-        stdout = stdout + uint8arrayToString(data)
+        stdout += uint8arrayToString(data);
     });
 
     python.stderr.on('data', (data) => {
-        stderr = stderr + uint8arrayToString(data)
+        stderr += uint8arrayToString(data);
     });
 
+    const timeout = setTimeout(() => {
+        if (!responseSent) {
+            python.kill('SIGKILL'); // Mata a execução se exceder o tempo limite for atingido
+            responseSent = true;
+            err("Execution time exceeded");
+            console.log("Execution time exceeded");
+        }
+    }, 1000); // 1 seg
+
     python.on('close', (code) => {
-        if (code == 0) {
-            // 0 significa sucesso, então envie stdout
-            success(stdout)
-        } else {
-            stderr = stderr.split(',')
-            err(stderr[1] + stderr[2])
+        clearTimeout(timeout); // Clear the timeout if the process closes before timing out
+        if (!responseSent) {
+            responseSent = true;
+            if (code === 0) {
+                success(stdout);
+            } else {
+                err(stderr || 'Unknown error occurred');
+            }
         }
     });
 }
 
-module.exports = invokeSubmission
+module.exports = invokeSubmission;
