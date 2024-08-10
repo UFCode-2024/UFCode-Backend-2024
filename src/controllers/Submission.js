@@ -13,6 +13,36 @@ module.exports.createSubmission = async (req, res) => {
 
     const filePath = await fileHandler.create(fileName, submissionBody.codeInput)
 
+
+    const caso_num = submissionBody.caso_num
+
+    //funcao para obter cada caso de teste individual (nesse caso teremos 2 casos de teste por problema)
+    function separarCasos(dados) {
+        const linhas = dados.split('\n');
+        const metade = Math.ceil(linhas.length / 2);
+        const caso1 = linhas.slice(0, metade).join('\n');
+        const caso2 = linhas.slice(metade).join('\n');
+        return { caso1, caso2 };
+      }
+
+
+    //obtendo os dados de cada caso de teste
+    const { caso1: input1, caso2: input2 } = separarCasos(problem.input);
+    const { caso1: expOut1, caso2: expOut2 } = separarCasos(problem.expectedOutput);
+
+
+    //organizando os dados
+    const input = {
+        1: input1,
+        2: input2
+      };
+
+    const expOut = {
+        1: expOut1,
+        2: expOut2
+    };
+      
+
     async function handleSubmissionError(error) {
         const createdSubmission = await SubmissionModel.create({
             id_problem: submissionBody.problem_id,
@@ -31,7 +61,7 @@ module.exports.createSubmission = async (req, res) => {
             success = success.replace('\r\n', '\n')
         }
 
-        const resultValidation = await validationHandler(success, problem.expectedOutput)
+        const resultValidation = await validationHandler(success, expOut[caso_num])
 
         let createdSubmission
         if (resultValidation) {
@@ -48,14 +78,14 @@ module.exports.createSubmission = async (req, res) => {
                 id_language: submissionBody.language_id,
                 codeInput: filePath,
                 result: resultValidation,
-                error: "sua saída: " + success + "\nsaída esperada: " + problem.expectedOutput + "\nDiferença na saída exibida pelo programa com a saída esperada. \ndica, lembre-se de colocar somente input()"
+                error: "entrada:\n" + input[caso_num] + "\n\nsua saída: " + success + "\nsaída esperada: " + expOut[caso_num] + "\nDiferença na saída exibida pelo programa com a saída esperada. \ndica, lembre-se de colocar somente input()"
             })
         }
 
         res.json(view.render(createdSubmission))
     }
 
-    submissionCodeHandler(filePath, problem.input,
+    submissionCodeHandler(filePath, input[caso_num],
         handleSubmissionError, handleSubmissionSuccess)
 
 }
