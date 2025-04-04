@@ -11,6 +11,7 @@ const problemRouter = require("../src/routers/Problem")
 const courseRouter = require("../src/routers/Course")
 const moduleRouter = require("../src/routers/Module")
 const quizzRouter = require("../src/routers/Quizz")
+const userProblemRouter = require("../src/routers/UserProblem")
 require('dotenv').config()
 
 module.exports = function () {
@@ -31,6 +32,7 @@ module.exports = function () {
     courseRouter(app)
     moduleRouter(app)
     quizzRouter(app)
+    userProblemRouter(app)
 
     return app
 }

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
 const SubmissionSchema = new Schema({
     codeInput: {
         type: String,
